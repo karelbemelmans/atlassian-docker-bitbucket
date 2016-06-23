@@ -34,6 +34,13 @@ RUN curl -L --silent                     ${DOWNLOAD_URL}${BITBUCKET_VERSION}.tar
     && chown -R ${RUN_USER}:${RUN_GROUP} ${BITBUCKET_INSTALL_DIR}/work               \
     && chown -R ${RUN_USER}:${RUN_GROUP} ${BITBUCKET_INSTALL_DIR}/conf
 
+# Outside the container
+#
+# We override the conf/server.xml file with our local.
+RUN rm /opt/atlassian/bitbucket/conf/server.xml \
+  && ln -s /var/atlassian/application-data/bitbucket/configuration/${BAMBOO_VERSION}/conf/server.xml /opt/atlassian/bitbucket/conf/server.xml
+
+
 USER ${RUN_USER}:${RUN_GROUP}
 
 VOLUME ["${BITBUCKET_INSTALL_DIR}"]
