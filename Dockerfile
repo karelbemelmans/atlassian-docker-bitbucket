@@ -38,7 +38,7 @@ RUN curl -L --silent                     ${DOWNLOAD_URL}${BITBUCKET_VERSION}.tar
 #
 # We override the conf/server.xml file with our local.
 RUN rm /opt/atlassian/bitbucket/conf/server.xml \
-  && ln -s /var/atlassian/application-data/bitbucket/configuration/${BAMBOO_VERSION}/conf/server.xml /opt/atlassian/bitbucket/conf/server.xml
+  && ln -s /var/atlassian/application-data/bitbucket/configuration/${BITBUCKET_VERSION}/conf/server.xml /opt/atlassian/bitbucket/conf/server.xml
 
 
 USER ${RUN_USER}:${RUN_GROUP}
