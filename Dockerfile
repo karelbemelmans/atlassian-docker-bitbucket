@@ -1,7 +1,7 @@
 FROM java:openjdk-8-jre
 MAINTAINER Karel Bemelmans <mail@karelbemelmans.com>
 
-ENV BITBUCKET_VERSION 4.7.1
+ENV BITBUCKET_VERSION 4.10.1
 ENV DOWNLOAD_URL      https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-
 
 ENV BITBUCKET_HOME          /var/atlassian/application-data/bitbucket
